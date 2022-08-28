@@ -29,7 +29,9 @@ jobs:
       - name: Show files
         run: ls -R
       - name: Git Status
-        run: git status
+        run: |
+          git status
+          git config --global --list
       - name: Hello world
         run: |
           echo hello world!
