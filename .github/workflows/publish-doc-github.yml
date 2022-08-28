@@ -31,7 +31,7 @@ jobs:
       - name: Git Status
         run: |
           git status
-          git config --global --list
+          git config --local --list
       - name: Hello world
         run: |
           echo hello world!
