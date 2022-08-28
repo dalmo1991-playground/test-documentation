@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Get repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
       - name: Checkout to doc pages
         run: |
           git fetch
@@ -32,6 +32,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m 'Deploy documentation'
+      - name: Push back to repo
+        run: |
+          git push origin doc-pages
       - name: Show files
         run: ls -R
       - name: Git Status
