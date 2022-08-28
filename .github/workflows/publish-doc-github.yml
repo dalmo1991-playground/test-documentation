@@ -1,0 +1,16 @@
+name: workflow to compile the docs on changes
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Get repo
+        uses: actions/checkout@master
+      - name: Hello world
+        run: |
+          echo hello world!
