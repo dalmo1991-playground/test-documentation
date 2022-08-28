@@ -24,11 +24,11 @@ jobs:
           python -m pip install -U sphinx
       - name: Build sphinx
         run: |
-          sphinx-build -b html doc-sphinx/ doc-compiled/
-          touch doc-compiled/.nojekyll
+          sphinx-build -b html doc-sphinx/ docs/
+          touch docs/.nojekyll
       - name: Commit documentation
         run: |
-          git add doc-compiled/
+          git add docs/
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m 'Deploy documentation'
