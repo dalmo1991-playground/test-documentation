@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  compile:
+  compile-and-publish-doc:
     runs-on: ubuntu-22.04
     steps:
       - name: Get repo
@@ -21,8 +21,11 @@ jobs:
       - name: Build sphinx
         run: |
           sphinx-build -b html doc-sphinx/ doc-compiled/
+          touch doc-compiled/.nojekyll
       - name: Show files
         run: ls -R
+      - name: Git Status
+        run: git status
       - name: Hello world
         run: |
           echo hello world!
