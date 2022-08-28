@@ -26,6 +26,12 @@ jobs:
         run: |
           sphinx-build -b html doc-sphinx/ doc-compiled/
           touch doc-compiled/.nojekyll
+      - name: Commit documentation
+        run: |
+          git add doc-compiled/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'Deploy documentation'
       - name: Show files
         run: ls -R
       - name: Git Status
