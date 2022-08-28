@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Get repo
         uses: actions/checkout@master
+      - name: Checkout to doc pages
+        run: git checkout doc-pages
       - name: Install Python
         uses: actions/setup-python@v4
         with:
