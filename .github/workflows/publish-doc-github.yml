@@ -22,7 +22,7 @@ jobs:
       - name: Install packages
         run: |
           python -m pip install -U sphinx
-          pytnon -m pip install -U groundwork-sphinx-theme
+          python -m pip install -U groundwork-sphinx-theme
       - name: Build sphinx
         run: |
           sphinx-build -b html doc-sphinx/ docs/
