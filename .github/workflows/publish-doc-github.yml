@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Get repo
         uses: actions/checkout@v3
-      - name: Checkout to doc pages
+      - name: Checkout to doc-pages
         run: |
           git fetch
           git checkout doc-pages
@@ -35,12 +35,3 @@ jobs:
       - name: Push back to repo
         run: |
           git push origin doc-pages
-      - name: Show files
-        run: ls -R
-      - name: Git Status
-        run: |
-          git status
-          git config --local --list
-      - name: Hello world
-        run: |
-          echo hello world!
