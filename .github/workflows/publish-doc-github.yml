@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Get repo
-        uses: actions/checkout@master
+        uses: actions/checkout
       - name: Hello world
         run: |
           echo hello world!
